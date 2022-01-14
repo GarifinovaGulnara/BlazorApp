@@ -1,0 +1,37 @@
+﻿@page "/Component"
+
+@using BlazorApp.Data
+@inject Students stud
+
+<h1>Component</h1>
+
+@if (stud == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stud in stud)
+            {
+                <tr>
+                    <td>@stud.Name</td>
+                    <td>@stud.Surname</td>
+                    <td>@stud.Group</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+}
