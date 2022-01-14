@@ -1,11 +1,12 @@
-﻿@page "/Component"
+﻿@using BlazorApp.Data
+@page "/Component"
 
-@using BlazorApp.Data
+
 @inject Students stud
 
 <h1>Component</h1>
 
-@if (stud == null)
+@if (student == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -20,7 +21,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var stud in stud)
+            @foreach (var stud in student)
             {
                 <tr>
                     <td>@stud.Name</td>
