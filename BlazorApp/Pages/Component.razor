@@ -1,12 +1,9 @@
 ﻿@using BlazorApp.Data
 @page "/Component"
 
-
-@inject Students stud
-
 <h1>Component</h1>
 
-@if (student == null)
+@if (stud == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -21,7 +18,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var stud in student)
+            @foreach (var stud in stud)
             {
                 <tr>
                     <td>@stud.Name</td>
@@ -34,5 +31,5 @@ else
 }
 
 @code {
-
+    public static List<Students> stud = Students.GetStudentInfo();
 }
