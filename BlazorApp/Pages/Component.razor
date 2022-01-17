@@ -3,6 +3,7 @@
 
 <h1>Component</h1>
 
+
 @if (stud == null)
 {
     <p><em>Loading...</em></p>
@@ -12,24 +13,23 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Group</th>
+                <th>@titles[0]</th>
+                <th>@titles[1]</th>
+                <th>@titles[2]</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var stud in stud)
-            {
-                <tr>
-                    <td>@stud.Name</td>
-                    <td>@stud.Surname</td>
-                    <td>@stud.Group</td>
-                </tr>
-            }
+            <ComponentGame stud="stud"></ComponentGame>
         </tbody>
     </table>
 }
 
+
+
 @code {
+    public List<string> titles = Students.titles;
     public static List<Students> stud = Students.GetStudentInfo();
+
+    public List<string> titlesG = Games.titlesG;
+    public static List<Games> game = Games.GetStudentInfo();
 }

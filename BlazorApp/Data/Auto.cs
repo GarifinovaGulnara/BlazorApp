@@ -11,6 +11,8 @@ namespace BlazorApp.Data
         public string Release { get; set; }
         public int Price { get; set; }
 
+        public static List<string> titlesA = new List<string>() { "Марка", "Дата выпуска", "Цена" };
+
         public Auto(string name, string releaes, int price)
         {
             Name = name;

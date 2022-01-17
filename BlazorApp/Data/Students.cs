@@ -11,6 +11,8 @@ namespace BlazorApp.Data
         public string Surname { get; set; }
         public int Group { get; set; }
 
+        public static List<string> titles = new List<string>() { "Имя", "Фамилия", "Группа" };
+
         public Students(string name, string surname, int group)
         {
             Name = name;
