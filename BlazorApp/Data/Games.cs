@@ -11,7 +11,7 @@ namespace BlazorApp.Data
         public string Release { get; set; }
         public double Rating { get; set; }
 
-        public static List<string> titlesG = new List<string>() { "Название", "Релиз", "Рейтинг" };
+        public static List<string> titles = new List<string>() { "Название", "Релиз", "Рейтинг" };
 
         public Games(string name, string release, double rating)
         {
@@ -20,7 +20,7 @@ namespace BlazorApp.Data
             Rating = rating;
         }
 
-        public static List<Games> GetStudentInfo()
+        public static List<Games> GetGamesInfo()
         {
             List<Games> game = new List<Games>();
             game.Add(new Games("GI", "21.05.2019", 4.95));

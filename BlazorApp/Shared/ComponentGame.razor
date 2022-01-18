@@ -1,16 +1,48 @@
 ﻿@using BlazorApp.Data
 
-@foreach (var stud in stud)
+@if (stud != null)
 {
-    <tr>
-        <td>@stud.Name</td>
-        <td>@stud.Surname</td>
-        <td>@stud.Group</td>
-    </tr>
+    foreach (var stud in stud)
+    {
+        <tr>
+            <td>@stud.Name</td>
+            <td>@stud.Surname</td>
+            <td>@stud.Group</td>
+        </tr>
+    }
+}
+
+@if (game != null)
+{
+    foreach (var game in game)
+    {
+        <tr>
+            <td>@game.Name</td>
+            <td>@game.Release</td>
+            <td>@game.Rating</td>
+        </tr>
+    }
+}
+
+@if (auto != null)
+{
+    foreach (var auto in auto)
+    {
+        <tr>
+            <td>@auto.Name</td>
+            <td>@auto.Release</td>
+            <td>@auto.Price</td>
+        </tr>
+    }
 }
 
 @code {
     [Parameter]
     public List<Students> stud { get; set; }
 
+    [Parameter]
+    public List<Games> game { get; set; }
+
+    [Parameter]
+    public List<Auto> auto { get; set; }
 }

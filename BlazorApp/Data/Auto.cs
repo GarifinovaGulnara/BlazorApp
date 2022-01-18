@@ -11,7 +11,7 @@ namespace BlazorApp.Data
         public string Release { get; set; }
         public int Price { get; set; }
 
-        public static List<string> titlesA = new List<string>() { "Марка", "Дата выпуска", "Цена" };
+        public static List<string> titles = new List<string>() { "Марка", "Дата выпуска", "Цена" };
 
         public Auto(string name, string releaes, int price)
         {
@@ -20,7 +20,7 @@ namespace BlazorApp.Data
             Price = price;
         }
 
-        public static List<Auto> GetStudentInfo()
+        public static List<Auto> GetAutoInfo()
         {
             List<Auto> auto = new List<Auto>();
             auto.Add(new Auto("M", "25.05.2009", 4500000));
