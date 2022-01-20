@@ -11,6 +11,7 @@ namespace BlazorApp.Data
         public string Surname { get; set; }
         public int Group { get; set; }
 
+        static List<Students> student = new List<Students>();
         public static List<string> titles = new List<string>() { "Имя", "Фамилия", "Группа" };
 
         public Students(string name, string surname, int group)
@@ -20,14 +21,13 @@ namespace BlazorApp.Data
             Group = group;
         }
 
+        public static void AddToList(Students std)
+        {
+            student.Add(std);
+        }
+
         public static List<Students> GetStudentInfo()
         {
-            List<Students> student = new List<Students>();
-            student.Add(new Students("Alina", "Al", 321));
-            student.Add(new Students("Adel", "Adelinova", 322));
-            student.Add(new Students("Masha", "Sergy", 322));
-            student.Add(new Students("Pasha", "Blinov", 321));
-            student.Add(new Students("Kety", "Pavlova", 321));
             return student;
         }
     }

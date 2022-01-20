@@ -1,0 +1,22 @@
+﻿@using BlazorApp.Data;
+@page "/Authorization"
+
+<h3>Authorization</h3>
+
+Имя<br />
+<input type="text" id="NameS" @bind="@valueN"/><br /><br />
+Фамилия<br />
+<input type="text" id="SurnameS" @bind="@valueS"/><br /><br />
+Группа<br />
+<input type="number" id="GroupS" @bind="@valueG"/><br /><br />
+<button class="btn btn-primary" @onclick="Add">Добавить</button>
+
+@code {
+    string valueN;
+    string valueS;
+    int valueG;
+    public void Add()
+    {
+        Students.AddToList(new Students(valueN, valueS, valueG));
+    }
+}
