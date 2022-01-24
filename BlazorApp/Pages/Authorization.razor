@@ -4,19 +4,20 @@
 <h3>Authorization</h3>
 
 Имя<br />
-<input type="text" id="NameS" @bind="@valueN"/><br /><br />
+<input type="text" id="NameS" @bind="@name"/><br /><br />
 Фамилия<br />
-<input type="text" id="SurnameS" @bind="@valueS"/><br /><br />
+<input type="text" id="SurnameS" @bind="@surname"/><br /><br />
 Группа<br />
-<input type="number" id="GroupS" @bind="@valueG"/><br /><br />
+<input type="number" id="GroupS" @bind="@group"/><br /><br />
 <button class="btn btn-primary" @onclick="Add">Добавить</button>
 
 @code {
-    string valueN;
-    string valueS;
-    int valueG;
+    public static List<Students> stud;
+    string name;
+    string surname;
+    int group;
     public void Add()
     {
-        Students.AddToList(new Students(valueN, valueS, valueG));
+        Students.AddToList(name, surname, group);
     }
 }
